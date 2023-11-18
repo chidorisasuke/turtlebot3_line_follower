@@ -13,24 +13,36 @@ add_compile_options(-std=c++11)
 ################################################################################
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  rospy
   std_msgs
   sensor_msgs
   geometry_msgs
   nav_msgs
   tf
   gazebo_ros
+  cv_bridge
+#  message_generation
+
 )
 
 find_package(gazebo REQUIRED)
+find_package(OpenCV REQUIRED)
+
 
 ################################################################################
 # Setup for python modules and scripts
 ################################################################################
+catkin_python_setup()
+
 
 ################################################################################
 # Declare ROS messages, services and actions
 ################################################################################
-
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+  sensor_msgs
+)
 ################################################################################
 # Declare ROS dynamic reconfigure parameters
 ################################################################################
@@ -40,7 +52,7 @@ find_package(gazebo REQUIRED)
 ################################################################################
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros rospy
   DEPENDS GAZEBO
 )
 
@@ -51,6 +63,7 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 
 include_directories(
   include
+  ${OpenCV_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
   ${GAZEBO_INCLUDE_DIRS}
 )
@@ -72,6 +85,14 @@ install(DIRECTORY include/${PROJECT_NAME}/
 
 install(DIRECTORY launch models rviz worlds 
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS
+  src/robot.py
+  src/simple_line_follow.py
+#  src/path_ekf_plotter.py
+  src/path_odom_plotter.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ################################################################################
