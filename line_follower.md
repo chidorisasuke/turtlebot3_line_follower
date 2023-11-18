@@ -5,5 +5,5 @@ roslaunch turtlebot3_gazebo turtlebot3_line_follow.launch
 ```
 to run the line follower node
 ```bash
-rosrun turtlebot3_line_follower linefollow.py
+rosrun turtlebot3_gazebo robot.py
 ```
