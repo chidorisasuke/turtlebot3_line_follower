@@ -17,5 +17,6 @@
   <buildtool_depend>catkin</buildtool_depend>
   <exec_depend>turtlebot3_fake</exec_depend>
   <exec_depend>turtlebot3_gazebo</exec_depend>
+  <exec_depend>linefollow</exec_depend>
   <export><metapackage/></export>
 </package>

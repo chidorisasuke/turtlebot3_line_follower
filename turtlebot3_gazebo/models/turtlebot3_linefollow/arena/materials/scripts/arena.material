@@ -1,0 +1,14 @@
+material arena
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture arena.png
+      }
+    }
+  }
+}
+
