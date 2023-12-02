@@ -196,7 +196,7 @@
   <joint name="camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="camera_link"/>
-    <origin xyz="0.13 0 0.05" rpy="0 0 0"/>
+    <origin xyz="0.13 0 0.1" rpy="0  1.37079 0"/>
 
     <child>camera_link</child>
     <parent>base_link</parent>
@@ -204,7 +204,7 @@
 
   <!-- Down facing camera -->
   <link name="camera_link">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <!-- <origin xyz="0 0 0" rpy="0  1.37079 0"/> -->
     <!-- <pose>0 0 0.075 0 0 0 </pose> -->
     <inertial>
       <mass value="0" />
