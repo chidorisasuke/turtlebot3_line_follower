@@ -1,6 +1,6 @@
 # Pada File Tutor_Simulasi.pdf
-Setelah git clone ... atau sebelum instalasi lakukan ini
-sudo apt update
+Setelah git clone ... atau sebelum instalasi, lakukan ini
+**sudo apt update**
 
 
 # TurtleBot3
