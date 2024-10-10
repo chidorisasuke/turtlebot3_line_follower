@@ -1,3 +1,8 @@
+# Pada File Tutor_Simulasi.pdf
+Setelah git clone ... atau sebelum instalasi lakukan ini
+sudo apt update
+
+
 # TurtleBot3
 <img src="https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/logo_turtlebot3.png" width="300">
 
